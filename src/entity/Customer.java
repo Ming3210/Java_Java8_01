@@ -59,7 +59,9 @@ public class Customer implements IApp {
         System.out.println("Enter customer's name:");
         name = scanner.nextLine();
         System.out.println("Enter customer's email:");
-        email = Optional.ofNullable(scanner.nextLine());
+        String inputEmail = scanner.nextLine();
+
+        email = inputEmail.isEmpty() ? Optional.empty() : Optional.of(inputEmail);
     }
 
     @Override

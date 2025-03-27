@@ -1,5 +1,6 @@
 package business;
 
+import entity.Customer;
 import entity.Order;
 
 import java.time.LocalDate;
@@ -16,11 +17,12 @@ public class OrderBusiness implements IOrderBusiness{
     public static void addOrder(Scanner scanner) {
         Order order = new Order();
         order.inputData(scanner);
+        orders.add(order);
     }
 
     public static void displayOrders() {
-        for (Order order : orders) {
-            order.toString();
+        for(Order order : orders){
+            System.out.println(order);
         }
     }
 
